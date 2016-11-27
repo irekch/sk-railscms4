@@ -5,6 +5,9 @@ class TestController < ApplicationController
     @testowa = "Witam w kursie ROR"
   end
   def test
-    render ('index')
+    render ('witaj')
+  end
+  def kurs
+    redirect_to('http://www.strefakursow.pl')
   end
 end
