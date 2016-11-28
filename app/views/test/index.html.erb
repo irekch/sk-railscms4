@@ -2,5 +2,20 @@
 <p>app/views/test/index.html.erb</p>
 <p>
     <% suma = 2+2 %>
-    <%= suma %>
+    Suma = <%= suma %>
+    <br>
+    <% imie = "Irek" %>
+    <%= "Witaj #{imie} w kursie Ruby" %>
+    <br>
+    <%= @testowa %>
+    <br>    
+    <%= "#{imie}, #{@testowa}" %>
+    <hr>
+</p>
+<p>
+    <% @imiona.each do |imie| %>
+        <%= "Witaj #{imie.capitalize} w kursie Ruby on Rails!" %>
+        <br>
+    <%end%>
+    
 </p>

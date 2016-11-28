@@ -3,6 +3,7 @@ class TestController < ApplicationController
   def index
     # to jest testowe odwolanie do pliku index.html.erb
     @testowa = "Witam w kursie ROR"
+    @imiona = ['ala', "ewa", "ola"]
   end
   def test
     render ('witaj')
