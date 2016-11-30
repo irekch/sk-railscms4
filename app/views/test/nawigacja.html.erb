@@ -1,17 +1,17 @@
 <p>
   
-  <a href="witaj">Link do strony "witaj" z zapisu HTML</a>
+  <a href="witaj?id=2&strona=3">Link do strony "witaj" z zapisu HTML</a>
   
 </p>
 
 <p>
 
-	<%= link_to('link do strony "witaj" z zapisu RoR', {:action=>'witaj'}) %>
+	<%= link_to('link do strony "witaj" z zapisu RoR', {:action=>'witaj', :id=>2, :strona=>3}) %>
 
 </p>
 
 <p>
 
-	<%= link_to('link do strony "index" z zapisu RoR', {:action=>'index'}) %>
+	<%= link_to('link do strony "index" z zapisu RoR', {:action=>'index', :id=>1, :strona=>1}) %>
 
 </p>
