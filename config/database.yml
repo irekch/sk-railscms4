@@ -18,18 +18,18 @@ test:
   pool: 5
   timeout: 5000
 
-# For Heroku deployment we use Postgres
+# production - tymczasowo
 production:
-  adapter: postgresql
-  encoding: unicode
+  adapter: sqlite3
+  database: db/production.sqlite3
   pool: 5
-  database: database_name
-  username: username
-  password: password
+  timeout: 5000
 
-# Old production
+# For Heroku deployment Postgres
 #production:
-#  adapter: sqlite3
-#  database: db/production.sqlite3
+#  adapter: postgresql
+#  encoding: unicode
 #  pool: 5
-#  timeout: 5000
+#  database: database_name
+#  username: username
+#  password: password
