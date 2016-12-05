@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161203175517) do
+ActiveRecord::Schema.define(version: 20161205190600) do
+
+  create_table "kategories", force: true do |t|
+    t.string   "nazwa"
+    t.integer  "pozycja"
+    t.boolean  "widoczna",   default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "uzytkowniks", force: true do |t|
     t.string   "imie",            limit: 20
