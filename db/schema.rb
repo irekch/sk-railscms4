@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161205194958) do
+ActiveRecord::Schema.define(version: 20161206094332) do
+
+  create_table "artykuls", force: true do |t|
+    t.integer  "strona_id"
+    t.string   "nazwa"
+    t.integer  "pozycja"
+    t.boolean  "widoczny",             default: true
+    t.text     "zawartosc"
+    t.string   "zdjecie_file_name"
+    t.string   "zdjecie_content_type"
+    t.integer  "zdjecie_file_size"
+    t.datetime "zdjecie_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "artykuls", ["strona_id"], name: "index_artykuls_on_strona_id"
 
   create_table "kategories", force: true do |t|
     t.string   "nazwa"
