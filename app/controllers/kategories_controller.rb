@@ -1,5 +1,9 @@
 class KategoriesController < ApplicationController
+  
+  layout false
+  
   def index
+    @kategorie = Kategorie.sortuj
   end
 
   def pokaz
