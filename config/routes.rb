@@ -1,4 +1,9 @@
 SkRailscms4::Application.routes.draw do
+  get "kategories/index"
+  get "kategories/pokaz"
+  get "kategories/nowa"
+  get "kategories/edycja"
+  get "kategories/usun"
   root 'test#index'
   # get "test/index"
   match ':controller(/:action(/:id))', :via => [:get, :post]
