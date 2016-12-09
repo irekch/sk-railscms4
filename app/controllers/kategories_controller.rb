@@ -7,6 +7,7 @@ class KategoriesController < ApplicationController
   end
 
   def pokaz
+    @kategoria = Kategorie.find(params[:id])
   end
 
   def nowa

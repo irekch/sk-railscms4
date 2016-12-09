@@ -1,2 +1,26 @@
-<h1>Kategories#pokaz</h1>
-<p>Find me in app/views/kategories/pokaz.html.erb</p>
+<h1>Pokaż Kategorię</h1>
+
+<%= link_to("Powrót", {:action => 'index'}) %>
+
+<table>
+  <tr>
+    <th>Nazwa</th>
+    <td><%= @kategoria.nazwa %></td>
+  </tr>
+  <tr>
+    <th>Pozycja</th>
+    <td><%= @kategoria.pozycja %></td>
+  </tr>
+  <tr>
+    <th>Widoczna?</th>
+    <td><%= @kategoria.widoczna ? 'Tak' : 'Nie' %></td>
+  </tr>
+  <tr>
+    <th>Otworzona:</th>
+    <td><%= @kategoria.created_at %></td>
+  </tr>
+  <tr>
+    <th>Aktualizacja:</th>
+    <td><%= @kategoria.updated_at %></td>
+  </tr>
+</table>
