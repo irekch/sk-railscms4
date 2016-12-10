@@ -21,7 +21,7 @@
       <th>
         <%= link_to("Pokaż", {:action => 'pokaz', :id => kategoria.id}) %>
         <%= link_to("Edycja", "#") %>
-        <%= link_to("Usuń", "#") %>
+        <%= link_to("Usuń", {:action => 'usun', :id => kategoria.id}) %>
       </th>
     </tr>
   <% end %>
