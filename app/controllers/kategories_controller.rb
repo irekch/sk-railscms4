@@ -1,6 +1,6 @@
 class KategoriesController < ApplicationController
   
-  layout false
+  layout 'admin'
   
   def index
     @kategorie = Kategorie.sortuj
