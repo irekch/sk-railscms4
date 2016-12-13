@@ -1,8 +1,11 @@
+<!DOCTYPE html>
+<html>
+
+<div class="hero-unit">
+  
 <h1>Pokaż Kategorię</h1>
 
-<%= link_to("Powrót", {:action => 'index'}) %>
-
-<table>
+<table class="table table-striped">
   <tr>
     <th>Nazwa</th>
     <td><%= @kategoria.nazwa %></td>
@@ -24,3 +27,11 @@
     <td><%= @kategoria.updated_at %></td>
   </tr>
 </table>
+
+<div style="text-align:center">
+  <%= link_to("Powrót", {:action => 'index'}, :class => 'btn btn-primary') %>
+</div>
+
+</div>
+
+</html>
