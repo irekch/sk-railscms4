@@ -11,6 +11,11 @@
 
 <!-- czesc glowna -->
 <div class="container">
+  <% if !flash[:notice].blank? %>
+    <div class="alert alert-success" style="text-align:center">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
   <%= yield %>
 </div>
 
