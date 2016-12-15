@@ -28,6 +28,21 @@ class StronasController < ApplicationController
   end
 
   def edycja
+    @strona = Strona.find(params[:id])
+    @kategoria = Kategorie.order('pozycja ASC')
+    @licznik = Strona.count
+  end
+  
+  def aktualizuj
+    @strona = Strona.find(params[:id])
+    if @strona.update_attributes(strona_parametry)
+      flash[:notice] = "Strona została pomyślnie zmodyfikowana"
+      redirect_to(:action=>'pokaz', :id => @strona.id)
+    else
+      @licznik = Strona.count
+      @kategoria = Kategorie.order('pozycja ASC')
+      render('edycja')
+    end
   end
 
   def usun
