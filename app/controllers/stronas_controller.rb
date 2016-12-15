@@ -52,7 +52,7 @@ class StronasController < ApplicationController
   
   def kasuj
     strona = Strona.find(params[:id]).destroy
-    flash[:notice] = "Strona została usunięta"
+    flash[:notice] = "Strona '#{strona.nazwa}' została usunięta"
     redirect_to(:action=>'index')
   end
   
