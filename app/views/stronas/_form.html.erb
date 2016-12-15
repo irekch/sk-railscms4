@@ -2,6 +2,7 @@
 <html>
 
 <table class="table table-striped">
+  <tr>
     <th><%= pole.label(:kategorie_id, "Kategoria") %></th>
     <td><%= pole.select(:kategorie_id, @kategoria.map{|t| [t.nazwa, t.id]}, :class=>'form-control') %></td>
   </tr>
@@ -21,7 +22,6 @@
     <th><%= pole.label(:created_at, "Utworzona") %></th>
     <td><%= pole.datetime_select(:created_at, :class=>'form-control') %></td>
   </tr>
-  <tr>
 </table>
 
 </html>
