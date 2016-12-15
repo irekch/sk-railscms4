@@ -7,6 +7,7 @@ class StronasController < ApplicationController
   end
 
   def pokaz
+    @strona = Strona.find(params[:id])
   end
 
   def nowa
