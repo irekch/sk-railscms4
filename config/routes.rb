@@ -1,4 +1,9 @@
 SkRailscms4::Application.routes.draw do
+  get "artykuls/index"
+  get "artykuls/pokaz"
+  get "artykuls/nowy"
+  get "artykuls/edycja"
+  get "artykuls/usun"
   get "stronas/index"
   get "stronas/pokaz"
   get "stronas/nowa"
