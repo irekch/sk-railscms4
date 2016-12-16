@@ -1,5 +1,9 @@
 class ArtykulsController < ApplicationController
+  
+  layout 'admin'
+
   def index
+     @artykuly = Artykul.sortuj
   end
 
   def pokaz
