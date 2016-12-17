@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<table class="table table-striped">
+  <tr>
+    <th><%= pole.label(:strona_id, "Strona") %></th>
+    <td><%= pole.select(:strona_id, @strona.map{|t| [t.nazwa, t.id]}, :class=>'form-control') %></td>
+  </tr>
+  <tr>
+    <th><%= pole.label(:nazwa) %></th>
+    <td><%= pole.text_field(:nazwa, :class=>'form-control') %></td>
+  </tr>
+  <tr>
+    <th><%= pole.label(:pozycja) %></th>
+    <td><%= pole.select(:pozycja, 1..@licznik, :class=>'form-control') %></td>
+  </tr>
+  <tr>
+    <th><%= pole.label(:widoczny, "Czy jest widoczny?") %></th>
+    <td><%= pole.check_box(:widoczny) %></td>
+  </tr>
+  <tr>
+    <th><%= pole.label(:zdjecie, "Zdjęcie") %></th>
+    <td><%= pole.file_field(:zdjecie) %></td>
+  </tr>
+  <tr>
+    <th><%= pole.label(:created_at, "Utworzony") %></th>
+    <td><%= pole.datetime_select(:created_at, :class=>'form-control') %></td>
+  </tr>
+</table>
+
+</html>
