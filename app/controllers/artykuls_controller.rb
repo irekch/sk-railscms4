@@ -35,7 +35,7 @@ class ArtykulsController < ApplicationController
   end
   
   def artykuly_parametry
-    params.require(:artykuly).permit(:nazwa, :pozycja, :widoczny, :created_at, :strona_id, :zdjecie)
+    params.require(:artykuly).permit(:nazwa, :pozycja, :widoczny, :created_at, :strona_id, :zdjecie, :zawartosc)
   end
   
 end
