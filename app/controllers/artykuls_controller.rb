@@ -7,6 +7,7 @@ class ArtykulsController < ApplicationController
   end
 
   def pokaz
+    @artykuly = Artykul.find(params[:id])
   end
 
   def nowy
