@@ -13,8 +13,8 @@ class Artykul < ActiveRecord::Base
                                     :message => '--- akceptuję tylkopliki GIF JPG i PNG ---'
 
   validates_attachment_size :zdjecie, 
-                                    :in => 0..150.kilobytes,
-                                    :message => '--- za duży plik max rozmiar to 150kB---'
+                                    :in => 0..850.kilobytes,
+                                    :message => '--- za duży plik max rozmiar to 850kB---'
 
   scope :widoczny, lambda{where(:widoczny => true)}
   scope :niewidoczny, lambda{where(:widoczny => false)}
