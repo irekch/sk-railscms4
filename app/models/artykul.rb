@@ -15,6 +15,10 @@ class Artykul < ActiveRecord::Base
   validates_attachment_size :zdjecie, 
                                     :in => 0..850.kilobytes,
                                     :message => '--- za duży plik max rozmiar to 850kB---'
+                                    
+  validates :nazwa,
+            :presence => true,
+            :length => { :maximum => 120, :message => ": Za długi tytuł artykułu. Maximum 120 znaków"}
 
   scope :widoczny, lambda{where(:widoczny => true)}
   scope :niewidoczny, lambda{where(:widoczny => false)}
