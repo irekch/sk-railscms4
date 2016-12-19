@@ -29,6 +29,21 @@ class ArtykulsController < ApplicationController
   end
 
   def edycja
+    @artykuly = Artykul.find(params[:id])
+    @strona = Strona.order('pozycja ASC')
+    @licznik = Artykul.count + 1
+  end
+
+  def aktualizuj
+    @artykuly = Artykul.find(params[:id])
+    if @artykuly.update_attributes(artykuly_parametry)
+      flash[:notice] = "Artykuł został pomyślnie zmodyfikowany"
+      redirect_to(:action=>'pokaz', :id => @artykuly.id)
+    else
+      @licznik = Artykul.count
+      @strona = Strona.order('pozycja ASC')
+      render('edycja')
+    end
   end
 
   def usun
