@@ -47,6 +47,13 @@ class ArtykulsController < ApplicationController
   end
 
   def usun
+    @artykuly = Artykul.find(params[:id])
+  end
+  
+  def kasuj
+    artykuly = Artykul.find(params[:id]).destroy
+    flash[:notice] = "Artykuł '#{artykuly.nazwa}' został usunięty"
+    redirect_to(:action=>'index')
   end
   
   def artykuly_parametry
