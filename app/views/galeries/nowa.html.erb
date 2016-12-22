@@ -1,2 +1,21 @@
-<h1>Galeries#nowa</h1>
-<p>Find me in app/views/galeries/nowa.html.erb</p>
+<!DOCTYPE html>
+<html>
+
+<div class="hero-unit">
+<h1>Nowa Galeria</h1>
+
+<%= form_for(:galeria, :url => {:action => 'utworz'}) do |pole| %>
+
+<%= render(:partial => "form", :locals => {:pole => pole}) %>
+
+<div style="text-align:center;">
+  <%= link_to("Powrót", {:action => 'index'}, :class => 'btn btn-warning') %>
+  <%= submit_tag("Utwórz", :class => 'btn btn-primary') %>
+</div>
+
+<% end  %>
+
+</div>
+
+</html>
+
