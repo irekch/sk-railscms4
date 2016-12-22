@@ -1,5 +1,9 @@
 class GaleriesController < ApplicationController
+  
+  layout 'admin'
+  
   def index
+    @galeria = Galerie.sortuj
   end
 
   def nowa
