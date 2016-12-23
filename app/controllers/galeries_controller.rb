@@ -43,6 +43,13 @@ class GaleriesController < ApplicationController
   end
 
   def usun
+    @galeria = Galerie.find(params[:id])
+  end
+  
+  def kasuj
+    galeria = Galerie.find(params[:id]).destroy
+    flash[:notice] = "Galeria '#{galeria.nazwa}' została usunięta"
+    redirect_to(:action=>'index')
   end
   
   def galeria_parametry
