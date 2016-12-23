@@ -23,6 +23,7 @@ class GaleriesController < ApplicationController
   end
 
   def pokaz
+    @galeria = Galerie.find(params[:id])
   end
 
   def edycja
