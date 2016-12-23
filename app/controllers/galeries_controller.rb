@@ -27,6 +27,19 @@ class GaleriesController < ApplicationController
   end
 
   def edycja
+    @galeria = Galerie.find(params[:id])
+    @licznik = Artykul.count
+  end
+
+  def aktualizuj
+    @galeria = Galerie.find(params[:id])
+    if @galeria.update_attributes(galeria_parametry)
+      flash[:notice] = "Galeria została pomyślnie zmodyfikowana"
+      redirect_to(:action=>'pokaz', :id => @galeria.id)
+    else
+      @licznik = Galeria.count
+      render('edycja')
+    end
   end
 
   def usun
