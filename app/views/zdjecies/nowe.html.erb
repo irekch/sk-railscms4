@@ -1,2 +1,22 @@
-<h1>Zdjecies#nowe</h1>
-<p>Find me in app/views/zdjecies/nowe.html.erb</p>
+<!DOCTYPE html>
+<html>
+
+<div class="hero-unit">
+<h1>Nowe Zdjęcie</h1>
+
+<%= form_for(:zdjecia, :url => {:action => 'utworz'}) do |pole| %>
+
+<%= render(:partial => "form", :locals => {:pole => pole}) %>
+
+<div style="text-align:center;">
+  <%= link_to("Powrót", {:action => 'index'}, :class => 'btn btn-warning') %>
+  <%= submit_tag("Utwórz", :class => 'btn btn-primary') %>
+</div>
+
+<% end  %>
+
+</div>
+
+</html>
+
+
