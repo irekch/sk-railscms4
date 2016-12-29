@@ -1,6 +1,6 @@
 SkRailscms4::Application.routes.draw do
   get "zdjecies/index"
-  get "zdjecies/nowa"
+  get "zdjecies/nowe"
   get "zdjecies/pokaz"
   get "zdjecies/edycja"
   get "zdjecies/usun"

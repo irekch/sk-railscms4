@@ -6,7 +6,8 @@ class ZdjeciesController < ApplicationController
     @zdjecia = Zdjecie.sortuj
   end
 
-  def nowa
+  def nowe
+
   end
 
   def pokaz
@@ -17,4 +18,9 @@ class ZdjeciesController < ApplicationController
 
   def usun
   end
+  
+  def zdjecia_parametry
+    params.require(:zdjecia).permit(:nazwa, :pozycja, :widoczne, :created_at, :opis, :zdjecie)
+  end
+  
 end
