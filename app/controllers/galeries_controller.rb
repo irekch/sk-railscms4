@@ -28,7 +28,7 @@ class GaleriesController < ApplicationController
 
   def edycja
     @galeria = Galerie.find(params[:id])
-    @licznik = Artykul.count
+    @licznik = Galerie.count
   end
 
   def aktualizuj
@@ -37,7 +37,7 @@ class GaleriesController < ApplicationController
       flash[:notice] = "Galeria została pomyślnie zmodyfikowana"
       redirect_to(:action=>'pokaz', :id => @galeria.id)
     else
-      @licznik = Galeria.count
+      @licznik = Galerie.count
       render('edycja')
     end
   end
