@@ -1,5 +1,9 @@
 class ZdjeciesController < ApplicationController
+  
+  layout 'admin'
+  
   def index
+    @zdjecia = Zdjecie.sortuj
   end
 
   def nowa
