@@ -47,6 +47,13 @@ class ZdjeciesController < ApplicationController
   end
 
   def usun
+    @zdjecia = Zdjecie.find(params[:id])
+  end
+  
+  def kasuj
+    zdjecia = Zdjecie.find(params[:id]).destroy
+    flash[:notice] = "Zdjęcie '#{zdjecia.nazwa}' zostało skasowane"
+    redirect_to(:action => 'index')
   end
   
   def zdjecia_parametry

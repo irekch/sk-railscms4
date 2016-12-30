@@ -1,2 +1,24 @@
-<h1>Zdjecies#usun</h1>
-<p>Find me in app/views/zdjecies/usun.html.erb</p>
+<!DOCTYPE html>
+<html>
+
+<div class="hero-unit">
+
+<h1>Usunięcie Zjęcia</h1>
+
+<%= form_for(:zdjecia, :url => {:action => 'kasuj', :id => @zdjecia.id}) do |pole| %>
+
+    <p>Czy na pewno mam usunąć zdjęcie?</p>
+    <p class="text-warning"><%= @zdjecia.nazwa %></p>
+    <p class="text-warning"><%= image_tag(@zdjecia.zdjecie) %></p>
+    
+    <div style="text-align:center">
+      <%= link_to("Powrót", {:action => 'index'}, :class => 'btn btn-primary') %>
+      <%= submit_tag("Usuń", :class => 'btn btn-danger') %>
+    </div>
+    
+<% end  %>
+
+</div>
+
+</html>
+
