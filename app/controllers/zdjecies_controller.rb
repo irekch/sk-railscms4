@@ -25,6 +25,7 @@ class ZdjeciesController < ApplicationController
   end
 
   def pokaz
+    @zdjecia = Zdjecie.find(params[:id])
   end
 
   def edycja
