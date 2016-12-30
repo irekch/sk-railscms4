@@ -22,7 +22,7 @@
       <td><%= zdjecie.pozycja %></td>
       <td><%= zdjecie.nazwa %></td>
       <td><%= image_tag zdjecie.zdjecie.url(:thumb) %></td>
-      <td><%= truncate(zdjecie.opis, :lenght => 120, :mission => "[...]") %></td>
+      <td><%= truncate(zdjecie.opis, :length => 50, :mission => "[...]") %></td>
       <td class="center"><%= status_widoku(zdjecie.widoczne)%></td>
       <td class="actions">
         <%= link_to("Pokaż", {:action => 'pokaz', :id => zdjecie.id}, :class => 'btn btn-xs btn-default') %>
