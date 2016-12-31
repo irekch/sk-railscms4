@@ -1,4 +1,6 @@
 SkRailscms4::Application.routes.draw do
+  get "dostep/index"
+  get "dostep/login"
   get "zdjecies/index"
   get "zdjecies/nowe"
   get "zdjecies/pokaz"
