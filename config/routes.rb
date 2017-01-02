@@ -27,6 +27,7 @@ SkRailscms4::Application.routes.draw do
 #  get "kategories/edycja"
 #  get "kategories/usun"
   root 'test#index'
+  get 'admin', :to => 'dostep#index'
   # get "test/index"
   match ':controller(/:action(/:id))', :via => [:get, :post]
   # The priority is based upon order of creation: first created -> highest priority.
