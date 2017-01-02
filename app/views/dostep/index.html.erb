@@ -1,2 +1,17 @@
-<h1>Dostep#index</h1>
-<p>Find me in app/views/dostep/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+
+<div class="hero-unit">
+
+<h3>Admin Menu</h3>
+  <%= link_to("Kategorie", {:controller => 'kategories'}, :class => 'btn btn-default') %>
+  <%= link_to("Strony", {:controller => 'stronas'}, :class => 'btn btn-default') %>
+  <%= link_to("Artykuły", {:controller => 'artykuls'}, :class => 'btn btn-default') %>
+  <%= link_to("Galerie", {:controller => 'galeries'}, :class => 'btn btn-default') %>
+  <%= link_to("Zdjęcia", {:controller => 'zdjecies'}, :class => 'btn btn-default') %>
+  <%= link_to("Użytkownicy", {:controller => 'uzytkowniks'}, :class => 'btn btn-default') %>
+  <%= link_to("Wyloguj", {:controller => 'logout'}, :class => 'btn btn-default') %>
+
+</div>
+
+</html>

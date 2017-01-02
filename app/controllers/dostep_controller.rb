@@ -1,4 +1,7 @@
 class DostepController < ApplicationController
+  
+  layout 'admin'
+  
   def index
   end
 
