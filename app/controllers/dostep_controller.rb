@@ -35,7 +35,7 @@ class DostepController < ApplicationController
     session[:uzytkownik_id] = nil
     session[:uzytkownik] = nil
     flash[:notice] = "Zostałeś wylogowany"
-    redirect_to(:action => "login")
+    redirect_to(:action => 'login')
   end
 
 end
