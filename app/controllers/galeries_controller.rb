@@ -2,6 +2,8 @@ class GaleriesController < ApplicationController
   
   layout 'admin'
   
+  before_action :sprawdz_logowanie
+  
   def index
     @galeria = Galerie.sortuj
   end

@@ -2,6 +2,8 @@ class KategoriesController < ApplicationController
   
   layout 'admin'
   
+  before_action :sprawdz_logowanie
+  
   def index
     @kategorie = Kategorie.sortuj
   end
