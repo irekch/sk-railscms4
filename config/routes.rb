@@ -1,4 +1,8 @@
 SkRailscms4::Application.routes.draw do
+  get "uzytkowniks/index"
+  get "uzytkowniks/nowy"
+  get "uzytkowniks/edycja"
+  get "uzytkowniks/usun"
 #  get "dostep/index"
 #  get "dostep/login"
 #  get "zdjecies/index"
