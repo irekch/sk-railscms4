@@ -2,7 +2,7 @@ class UzytkowniksController < ApplicationController
   
   layout "admin"
   
-  before_action :sprawdz_logowanie
+#  before_action :sprawdz_logowanie
   
   def index
     @uzytkownik = Uzytkownik.sortuj
