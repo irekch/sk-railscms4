@@ -24,6 +24,17 @@ class UzytkowniksController < ApplicationController
   end
 
   def edycja
+    @uzytkownik = Uzytkownik.find(params[:id])
+  end
+
+  def aktualizuj
+    @uzytkownik = Uzytkownik.find(params[:id])
+    if @uzytkownik.update_attributes(uzytkownik_parametry)
+      flash[:notice] = "Dane użytkownika zostały pomyślnie zmodyfikowane"
+      redirect_to(:action=>'index')
+    else
+      render('edycja')
+    end
   end
 
   def usun
