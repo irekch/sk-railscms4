@@ -38,6 +38,13 @@ class UzytkowniksController < ApplicationController
   end
 
   def usun
+    @uzytkownik = Uzytkownik.find(params[:id])
+  end
+  
+  def kasuj
+    uzytkownik = Uzytkownik.find(params[:id]).destroy
+    flash[:notice] = "Konto użytkownika '#{uzytkownik.imie} #{uzytkownik.nazwisko}' zostało usunięte"
+    redirect_to(:action=>'index')
   end
   
   private
