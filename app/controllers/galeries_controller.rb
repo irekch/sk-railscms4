@@ -53,6 +53,8 @@ class GaleriesController < ApplicationController
     flash[:notice] = "Galeria '#{galeria.nazwa}' została usunięta"
     redirect_to(:action=>'index')
   end
+
+private
   
   def galeria_parametry
     params.require(:galeria).permit(:nazwa, :pozycja, :widoczna, :created_at, :opis, :zdjecie)

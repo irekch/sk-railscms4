@@ -58,6 +58,8 @@ class ArtykulsController < ApplicationController
     redirect_to(:action=>'index')
   end
   
+private
+  
   def artykuly_parametry
     params.require(:artykuly).permit(:nazwa, :pozycja, :widoczny, :created_at, :strona_id, :zdjecie, :zawartosc)
   end

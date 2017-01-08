@@ -57,6 +57,8 @@ class StronasController < ApplicationController
     flash[:notice] = "Strona '#{strona.nazwa}' została usunięta"
     redirect_to(:action=>'index')
   end
+
+private
   
   def strona_parametry
     params.require(:strona).permit(:nazwa, :pozycja, :widoczna, :created_at, :kategorie_id)

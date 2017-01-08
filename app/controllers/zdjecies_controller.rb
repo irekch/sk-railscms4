@@ -57,6 +57,8 @@ class ZdjeciesController < ApplicationController
     flash[:notice] = "Zdjęcie '#{zdjecia.nazwa}' zostało skasowane"
     redirect_to(:action => 'index')
   end
+
+private
   
   def zdjecia_parametry
     params.require(:zdjecia).permit(:galerie_id, :nazwa, :pozycja, :widoczne, :created_at, :opis, :zdjecie)
