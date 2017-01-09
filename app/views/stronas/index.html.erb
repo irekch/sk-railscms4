@@ -2,6 +2,10 @@
 <html>
 
 <div class="hero-unit">
+  
+  <%= link_to("<< Powrót do kategorii", {:controller => 'kategories', :action => 'index'}, 
+  :class => 'btn btn-xs btn-default') %>	
+
 <h1>Strony</h1>
 
 <%= link_to("Dodaj nową stronę", {:action => 'nowa'}, :class => 'btn btn-mini btn-primary') %>

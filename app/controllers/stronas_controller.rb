@@ -5,7 +5,9 @@ class StronasController < ApplicationController
   before_action :sprawdz_logowanie
 
   def index
-    @stronas = Strona.sortuj
+    # @stronas = Strona.sortuj
+    @kategorie = Kategorie.find(params[:kategoria_id])
+    @stronas = @kategorie.stronas.sortuj
   end
 
   def pokaz
