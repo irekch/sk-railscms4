@@ -3,10 +3,9 @@ class StronasController < ApplicationController
   layout 'admin'
   
   before_action :sprawdz_logowanie
+  before_action :szukaj_kategorie
 
   def index
-    # @stronas = Strona.sortuj
-    @kategorie = Kategorie.find(params[:kategoria_id])
     @stronas = @kategorie.stronas.sortuj
   end
 
@@ -15,7 +14,7 @@ class StronasController < ApplicationController
   end
 
   def nowa
-    @strona = Strona.new({:nazwa => "Podaj nazwę strony"})
+    @strona = Strona.new({:kategorie_id => @kategorie.id , :nazwa => "Podaj nazwę strony"})
     @kategoria = Kategorie.order('pozycja ASC')
     @licznik = Strona.count + 1
   end
@@ -24,7 +23,7 @@ class StronasController < ApplicationController
     @strona = Strona.new(strona_parametry)
     if @strona.save
       flash[:notice] = "Strona została pomyślnie utworzona"
-      redirect_to(:action=>'index')
+      redirect_to(:action=>'index', :kategoria_id => @kategorie.id)
     else
       @licznik = Strona.count + 1
       @kategoria = Kategorie.order('pozycja ASC')
@@ -42,7 +41,7 @@ class StronasController < ApplicationController
     @strona = Strona.find(params[:id])
     if @strona.update_attributes(strona_parametry)
       flash[:notice] = "Strona została pomyślnie zmodyfikowana"
-      redirect_to(:action=>'pokaz', :id => @strona.id)
+      redirect_to(:action=>'pokaz', :id => @strona.id, :kategoria_id => @kategorie.id)
     else
       @licznik = Strona.count
       @kategoria = Kategorie.order('pozycja ASC')
@@ -57,13 +56,19 @@ class StronasController < ApplicationController
   def kasuj
     strona = Strona.find(params[:id]).destroy
     flash[:notice] = "Strona '#{strona.nazwa}' została usunięta"
-    redirect_to(:action=>'index')
+    redirect_to(:action=>'index', :kategoria_id => @kategorie.id)
   end
 
 private
   
   def strona_parametry
     params.require(:strona).permit(:nazwa, :pozycja, :widoczna, :created_at, :kategorie_id)
+  end
+
+  def szukaj_kategorie
+    if params[:kategoria_id]
+      @kategorie = Kategorie.find(params[:kategoria_id])
+    end
   end
 
 end
