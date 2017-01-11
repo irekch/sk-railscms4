@@ -1,5 +1,6 @@
 class Galerie < ActiveRecord::Base
-  has_many :zdjecies
+
+  has_many :zdjecies, class_name: "Zdjecie"
   
   # przekopiowane z paperclip dla Rails 4
   # has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
