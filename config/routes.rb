@@ -1,4 +1,10 @@
 SkRailscms4::Application.routes.draw do
+  get "public/index"
+  get "public/artkuly"
+  get "public/galerie"
+  get "public/kategorie"
+  get "public/nowosci"
+  get "public/strona"
   get "uzytkowniks/index"
   get "uzytkowniks/nowy"
   get "uzytkowniks/edycja"
