@@ -5,7 +5,7 @@ class PublicController < ApplicationController
   def index
   end
 
-  def artkuly
+  def artykuly
   end
 
   def galerie
