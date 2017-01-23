@@ -9,6 +9,7 @@ class PublicController < ApplicationController
   end
 
   def artykuly
+    @strona_menu = Strona.where(:widoczna => true).last(10)
   end
 
   def galerie
