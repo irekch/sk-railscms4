@@ -18,6 +18,7 @@ class PublicController < ApplicationController
   end
 
   def nowosci
+    @artykul = Artykul.find(params[:artykul_id])
   end
 
   def strona
