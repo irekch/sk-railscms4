@@ -8,7 +8,7 @@ class PublicController < ApplicationController
     @galerie = Galerie.where(:widoczna => true).last(3)
   end
 
-  def artykuly
+  def stronyspis
     @strona_menu = Strona.where(:widoczna => true).last(10)
   end
 
