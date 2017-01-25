@@ -23,7 +23,7 @@
               <ul class="dropdown-menu">
                 <% kategoria_menu   = Kategorie.where(:widoczna => true).last(10) %>
                 <% kategoria_menu.each do |kategoria| %>
-                  <li><%= link_to(kategoria.nazwa, {:action => 'kategoria', :kategoria_id => kategoria.id}) %></li>   
+                  <li><%= link_to(kategoria.nazwa, {:action => 'kategorie', :kategoria_id => kategoria.id}) %></li>   
                 <% end %>
               </ul>
             </li>
