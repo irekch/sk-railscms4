@@ -1,2 +1,11 @@
-<h1>Public#kategorie</h1>
-<p>Find me in app/views/public/kategorie.html.erb</p>
+<% @tytul_strony = "Kategorie" %>
+
+<div class="container">
+  <div id="row">
+    <h2>Lista stron w kategorii: <%= @kategoria.nazwa %></h2>
+    <% @kategoria.stronas.widoczna.each do |strona| %>
+      <%= link_to(strona.nazwa, {:action => 'strona', :strona_id => strona.id}, 
+                :class => 'btn btn-default btn-lg btn-block') %>
+    <% end %>
+  </div>
+</div>
