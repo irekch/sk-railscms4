@@ -23,5 +23,6 @@ class PublicController < ApplicationController
   end
 
   def strona
+    @strona = Strona.find(params[:strona_id])
   end
 end
