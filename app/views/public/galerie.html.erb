@@ -13,19 +13,22 @@
       <%= image_tag(@galeria.zdjecie.url, :class => "featurette-image img-responsive") %>
     </div>
   </div>
+  <hr>
 </div>
 
 <div class="container">
-  <div class="row">
-    <% @galeria.zdjecies.each do |zdjecie|  %>
-      <div class="col-xs-6 col-md-4">
-        <a class="example-image-link" href="<%= zdjecie.zdjecie.url %>" 
-          data-lightbox="example-set" title="<%= zdjecie.opis %>">
-          <%= image_tag(zdjecie.zdjecie.url(:thumb), :class => "img-rounded") %>
-        </a>
-        <br>
-        <%= zdjecie.nazwa %>
-      </div>
-    <% end %>
-  </div>
+  <% @galeria.zdjecies.widoczne.each_slice(3) do |zdjecie| %>
+    <div class="row">
+      <% zdjecie.each do |zdj|  %>
+        <div class="col-md-4">
+          <a class="example-image-link" href="<%= zdj.zdjecie.url %>" 
+            data-lightbox="example-set" title="<%= zdj.opis %>">
+            <%= image_tag(zdj.zdjecie.url(:thumb), :class => "img-rounded") %>
+          </a>
+          <br>
+          <%= zdj.nazwa %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
